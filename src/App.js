@@ -1,13 +1,16 @@
 import * as React from 'react';
 import { Admin, Resource } from 'react-admin';
-import restProvider from 'ra-data-simple-rest';
+// import restProvider from 'ra-data-simple-rest';
+import jsonServerProvider from 'ra-data-json-server';
 
-import { UserList, UserEdit, UserCreate, UserIcon } from './components/users';
+import { UserList, UserEdit, UserIcon } from './components/users';
+import { ProductList, ProductCreate, ProductIcon } from './components/products';
 
 function App() {
   return (
-    <Admin dataProvider={restProvider('http://localhost:3000')}>
-      <Resource name="users" list={UserList} edit={UserEdit} create={UserCreate} icon={UserIcon}/>
+    <Admin dataProvider={jsonServerProvider('https://jsonplaceholder.typicode.com')}>
+      <Resource name="users" list={UserList} edit={UserEdit} icon={UserIcon}/>
+      <Resource name="posts" list={ProductList} create={ProductCreate} icon={ProductIcon} />
     </Admin>
   );
 }
