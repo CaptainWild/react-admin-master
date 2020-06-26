@@ -1,7 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import { List, Edit, Create, SimpleForm, TextInput } from 'react-admin';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Grid } from '@material-ui/core';
+
 import { mockData } from './data';
 import ProductCard from './productCard';
 
@@ -43,9 +44,9 @@ export const ProductCreate = (props) => (
   <Create title="Add New Product" {...props}>
     <SimpleForm>
       <TextInput source="title" />
-      <TextInput source="body" />
+      <TextInput source="description" />
+      <TextInput source="created_at" />
       <TextInput source="price" />
-      <TextInput source="slug" />
     </SimpleForm>
   </Create>
 );
@@ -59,6 +60,9 @@ export const ProductEdit = (props) => (
     <SimpleForm>
       <TextInput disabled source="id" />
       <TextInput source="title" />
+      <TextInput source="description" />
+      <TextInput source="created_at" />
+      <TextInput source="price" />
     </SimpleForm>
   </Edit>
 );

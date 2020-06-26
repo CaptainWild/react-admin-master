@@ -1,9 +1,8 @@
-import * as React from 'react';
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { Filter, List, SimpleShowLayout, Show, Datagrid, Edit, SimpleForm, TextField, EditButton, TextInput, SearchInput, ReferenceInput, SelectInput, BulkDeleteButton } from 'react-admin';
 import GroupIcon from '@material-ui/icons/Group';
-import ResetViewsButton from '../others/resetViewButton';
 
+import ResetViewsButton from '../others/resetViewButton';
 export const UserIcon = GroupIcon;
 
 const PostBulkActionButtons = props => (

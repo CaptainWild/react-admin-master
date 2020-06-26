@@ -74,7 +74,7 @@ const ProductCard = props => {
           variant="h6"
           cursor="pointer"
         >
-          {product.name}
+          {product.title}
         </Typography>
         <Typography
           className={classes.description}
