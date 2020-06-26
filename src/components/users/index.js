@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Fragment } from 'react';
-import { Filter, List, Datagrid, Edit, SimpleForm, TextField, EditButton, TextInput, SearchInput, ReferenceInput, SelectInput, BulkDeleteButton } from 'react-admin';
+import { Filter, List, SimpleShowLayout, Show, Datagrid, Edit, SimpleForm, TextField, EditButton, TextInput, SearchInput, ReferenceInput, SelectInput, BulkDeleteButton } from 'react-admin';
 import GroupIcon from '@material-ui/icons/Group';
-import ResetViewsButton from './resetViewButton';
+import ResetViewsButton from '../others/resetViewButton';
 
 export const UserIcon = GroupIcon;
 
@@ -16,26 +16,36 @@ const PostBulkActionButtons = props => (
 
 const ListFilter = (props) => (
   <Filter {...props}>
-    <TextInput source="name" alwaysOn />
-    <SearchInput source="url" defaultValue="Please input url" />
-    <SearchInput source="locale" defaultValue="Please input locale" />
+    <SearchInput source="q" alwaysOn />
+    <TextInput source="email" placeholder="Please search with Email" resettable />
   </Filter>
 );
 
+const ShowUserTitle = ({ record }) => {
+  return <span> {record ? ` : ${record.name}` : ''}</span>;
+};
+
+const RecordShow = props => (
+  <Show title={<ShowUserTitle />} {...props}>
+    <SimpleShowLayout>
+      <TextField source="name" />
+      <TextField source="nickname" />
+      <TextField source="locale" />
+      <TextField source="description" />
+    </SimpleShowLayout>
+  </Show>
+);
+
 export const UserList = (props) => (
-  <List {...props} bulkActionButtons={<PostBulkActionButtons />} filters={<ListFilter />}>
-    <Datagrid>
+  <List {...props} bulkActionButtons={<PostBulkActionButtons />} filters={<ListFilter />} >
+    <Datagrid expand={<RecordShow />}>
       <TextField source="id" />
       <TextField source="username" />
       <TextField source="name" />
-      <TextField source="first_name" />
-      <TextField source="last_name" />
       <TextField source="email" />
+      <TextField source="product" />
       <TextField source="url" />
-      <TextField source="description" />
       <TextField source="locale" />
-      <TextField source="nickname" />
-      <TextField source="slug" />
       <EditButton basePath="/users" />
     </Datagrid>
   </List>
@@ -55,8 +65,8 @@ export const UserEdit = (props) => (
       <TextInput source="last_name" />
       <TextInput source="email" type="email" />
       <TextInput source="url" />
-      <ReferenceInput label="Products" source="title" reference="posts" >
-        <SelectInput optionText="body" optionValue="id" />
+      <ReferenceInput label="Products" source="product" reference="posts" perPage={100}>
+        <SelectInput optionText="id" editable />
       </ReferenceInput>
       <TextInput source="description" />
       <TextInput source="locale" />
