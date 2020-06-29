@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
     Button,
     useUpdateMany,
@@ -28,7 +28,7 @@ const ResetViewsButton = ({ selectedIds, component }) => {
 
     return (
         <Button
-            label="RESET VIEWS"
+            label='RESET VIEWS'
             disabled={loading}
             onClick={updateMany}
         >

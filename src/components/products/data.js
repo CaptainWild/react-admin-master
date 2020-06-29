@@ -67,6 +67,6 @@ export const mockData = {
     title: 'Hitachi',
     price: '$190',
     created_at: '2020/4/6',
-    description: 'Hitachi delivers digital solutions utilizing Lumada in five sectors including Mobility, Smart Life, Industry, Energy and IT, to increase our customer',
+    description: 'Hitachi delivers digital solutions utilizing Lumada in five sectors including Mobility, Smart Life, Industry, Energy and IT, to increase our customer.',
   },
 }

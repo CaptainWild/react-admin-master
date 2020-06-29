@@ -15,7 +15,9 @@ import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 
 const useStyles = makeStyles(theme => ({
-  root: {},
+  root: {
+    cursor: 'context-menu',
+  },
   imageContainer: {
     height: 64,
     width: 64,
@@ -29,9 +31,15 @@ const useStyles = makeStyles(theme => ({
     cursor: 'pointer',
   },
   description: {
+    overflow: 'hidden',
+    WebkitLineClamp: 4,
+    display: '-webkit-box',
+    WebkitBoxOrient: 'vertical',
+    whiteSpace: 'normal',
+    width: '100%',
     textAlign: 'center',
-    height: 80,
-    display: 'inline-block',
+    height: 85,
+    textOverflow: 'clip',
     fontSize: 15,
   },
   image: {
@@ -62,17 +70,16 @@ const ProductCard = props => {
       <CardContent>
         <div className={classes.imageContainer}>
           <img
-            alt="Product"
+            alt='Product'
             className={classes.image}
             src={product.imageUrl ? product.imageUrl : '/images/product.png' }
             onClick={showProduct}
           />
         </div>
         <Typography
-          align="center"
+          align='center'
           gutterBottom
-          variant="h6"
-          cursor="pointer"
+          variant='h6'
         >
           {product.title}
         </Typography>
@@ -86,7 +93,7 @@ const ProductCard = props => {
       <CardActions>
         <Grid
           container
-          justify="space-between"
+          justify='space-between'
         >
           <Grid
             className={classes.statsItem}
@@ -94,8 +101,8 @@ const ProductCard = props => {
           >
             <AccessTimeIcon className={classes.statsIcon} />
             <Typography
-              display="inline"
-              variant="body2"
+              display='inline'
+              variant='body2'
             >
               {`Production Date: ${product.created_at}`}
             </Typography>
@@ -106,8 +113,8 @@ const ProductCard = props => {
           >
             <AttachMoneyIcon className={classes.statsIcon} />
             <Typography
-              display="inline"
-              variant="body2"
+              display='inline'
+              variant='body2'
             >
               {product.price}
             </Typography>

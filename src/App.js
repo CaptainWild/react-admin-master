@@ -9,7 +9,7 @@ import { ProductList, ProductEdit, ProductCreate, ProductIcon } from './componen
 function App() {
   return (
     <Admin dataProvider={jsonServerProvider('https://jsonplaceholder.typicode.com')}>
-      <Resource name="users" list={UserList} edit={UserEdit} icon={UserIcon}/>
+      <Resource name="users" list={UserList} edit={UserEdit} icon={UserIcon} />
       <Resource name="posts" list={ProductList} edit={ProductEdit} create={ProductCreate} icon={ProductIcon} />
     </Admin>
   );
