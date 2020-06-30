@@ -42,7 +42,7 @@ const editStyles = makeStyles({
 });
 
 const EditProductTitle = ({ record }) => {
-  return <span>{record ? `"${record.name}"` : ''}</span>;
+  return <span>{record ? `"${record.title}"` : ''}</span>;
 };
 
 const ingredientChoices = [
