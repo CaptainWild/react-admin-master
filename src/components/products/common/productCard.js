@@ -59,9 +59,10 @@ const ProductCard = props => {
   const { className, product, ...rest } = props;
   const redirect = useRedirect();
   const showProduct = id => {
-    redirect(`/posts/${product.id}`);
+    redirect(`/posts/${product.id}/show`);
   }
   const classes = useStyles();
+
   return (
     <Card
       {...rest}

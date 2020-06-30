@@ -27,7 +27,6 @@ const useStyles = makeStyles({
 
 const StarRatingInput = props => {
   const { input } = useInput(props);
-  console.log(useInput(props))
   const classes = useStyles();
   const [value, setValue] = useState(input.value);
 

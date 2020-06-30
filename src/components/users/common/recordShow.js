@@ -48,7 +48,7 @@ const ShowUserTitle = ({ record }) => {
 const RecordShow = props => {
   const { record } = props;
   const classes = useStyles();
-  console.log(record)
+
   return (
     <Show title={<ShowUserTitle />} {...props}>
       <SimpleShowLayout>
