@@ -91,7 +91,7 @@ export const ProductCreate = (props) => {
                     INFORMATION
                   </Typography>
                   <TextInput source='title' className={classes.input} />
-                  <TextInput source='price' className={classes.input} />
+                  <TextInput label='Product Link' source='link' className={classes.input} />
                   <DateInput label='Production Date' source='created_at' className={classes.input} />
                 </CardContent>
               </Card>

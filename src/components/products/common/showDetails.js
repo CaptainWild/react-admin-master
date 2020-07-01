@@ -10,8 +10,6 @@ import {
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 
-import { mockData } from './data';
-
 const useStyles = makeStyles({
   root: {
   },
@@ -37,8 +35,6 @@ const useStyles = makeStyles({
 
 const ShowDetails = ({record}) => {
   const classes = useStyles();
-  // for test
-  const data = mockData[record.id];
 
   return (
     <div className={classes.info}>
@@ -54,19 +50,7 @@ const ShowDetails = ({record}) => {
                 gutterBottom
                 variant='h5'
               >
-                {data.title}
-              </Typography>
-            </Grid>
-            <Grid item xs={3}>
-              <AttachMoneyIcon className={classes.statsIcon} />
-            </Grid>
-            <Grid item xs={9}>
-              <Typography
-                gutterBottom
-                variant='h6'
-                style={{marginLeft: 30}}
-              >
-                {data.price}
+                {record.title}
               </Typography>
             </Grid>
             <Grid item xs={3}>
@@ -78,7 +62,7 @@ const ShowDetails = ({record}) => {
                 variant='h6'
                 style={{marginLeft: 30}}
               >
-                {data.created_at}
+                {record.created_at}
               </Typography>
             </Grid>
           </Grid>
@@ -97,7 +81,7 @@ const ShowDetails = ({record}) => {
                 <br/>
                 <TextField
                   label="Ingredient"
-                  defaultValue={data.ingredient}
+                  defaultValue={record.ingredient}
                   InputProps={{
                     readOnly: true,
                   }}
@@ -106,7 +90,7 @@ const ShowDetails = ({record}) => {
                 />
                 <TextField
                   label="Category of Gene-based skin care"
-                  defaultValue={data.category_skinCare}
+                  defaultValue={record.category_skinCare}
                   InputProps={{
                     readOnly: true,
                   }}
@@ -115,7 +99,7 @@ const ShowDetails = ({record}) => {
                 />
                 <TextField
                   label="Category of application"
-                  defaultValue={data.category_application}
+                  defaultValue={record.category_application}
                   InputProps={{
                     readOnly: true,
                   }}
@@ -124,7 +108,7 @@ const ShowDetails = ({record}) => {
                 />
                 <TextField
                   label="Category of product"
-                  defaultValue={data.category_product}
+                  defaultValue={record.category_product}
                   InputProps={{
                     readOnly: true,
                   }}
@@ -136,7 +120,7 @@ const ShowDetails = ({record}) => {
                   label="Description"
                   multiline
                   rows={4}
-                  defaultValue={data.description}
+                  defaultValue={record.description}
                   variant="outlined"
                   style={{margin:10, width: 560}}
                 />

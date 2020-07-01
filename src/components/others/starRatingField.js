@@ -2,12 +2,10 @@ import React from 'react';
 import Rating from '@material-ui/lab/Rating';
 
 const StarRatingField = ({record}) => {
-  // for test
-  record.rating = 2;
 
-  return record && record.rating ? (
+  return record ? (
     <span>
-      <Rating value={record.rating} />
+      <Rating value={record.rating} readOnly />
     </span>
   ) : null;
 };

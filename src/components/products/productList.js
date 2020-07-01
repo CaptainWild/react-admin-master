@@ -2,7 +2,6 @@ import React from 'react';
 import { List } from 'react-admin';
 import { Grid } from '@material-ui/core';
 
-import { mockData } from './common/data';
 import ProductCard from './common/productCard';
 
 const ProductGrid = ({ ids, data, basePath }) => (
@@ -19,7 +18,7 @@ const ProductGrid = ({ ids, data, basePath }) => (
           md={6}
           xs={12}
         >
-          <ProductCard product={mockData[id]} />
+          <ProductCard product={data[id]} />
         </Grid>
       ))}
     </Grid>

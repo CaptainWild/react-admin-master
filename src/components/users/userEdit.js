@@ -1,5 +1,5 @@
 import React  from 'react';
-import { Edit, TabbedForm, FormTab, TextInput, ReferenceInput, SelectInput } from 'react-admin';
+import { Edit, TabbedForm, FormTab, TextInput, ReferenceArrayInput, SelectArrayInput, useGetList } from 'react-admin';
 import { Grid, Avatar, Typography, Card, CardContent } from '@material-ui/core';
 import RichTextInput from 'ra-input-rich-text';
 import { makeStyles } from '@material-ui/core';
@@ -45,6 +45,7 @@ const EditUserTitle = ({ record }) => {
 
 export const UserEdit = (props) => {
   const classes = editStyles();
+  const { total } = (useGetList('posts', {page: 1, perPage: 1}, {field: 'title', order: 'DESC'}));
 
   return (
     <Edit title={<EditUserTitle />} {...props}>
@@ -88,9 +89,9 @@ export const UserEdit = (props) => {
                   <Typography gutterBottom variant="h5" component="h2">
                     Other Info
                   </Typography>
-                  <ReferenceInput label='Products' source='product' reference='posts' perPage={100} className={classes.input}>
-                    <SelectInput optionText='id' editable />
-                  </ReferenceInput>
+                  <ReferenceArrayInput label='Products' source='product' reference='posts' perPage={total} className={classes.input}>
+                    <SelectArrayInput optionText='title' />
+                  </ReferenceArrayInput>
                   <TextInput source='nickname' className={classes.input} />
                   <TextInput source='slug' className={classes.input} />
                   <StarRatingInput

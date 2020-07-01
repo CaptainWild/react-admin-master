@@ -1,9 +1,10 @@
 import React  from 'react';
-import { Filter, List, Datagrid, TextField, EditButton, TextInput, SearchInput, BulkDeleteButton } from 'react-admin';
+import { Filter, List, Datagrid, TextField, EditButton, TextInput, SearchInput, BulkDeleteButton, useGetList } from 'react-admin';
 
 import ResetViewsButton from '../others/resetViewButton';
 import RecordShow from './common/recordShow';
 import StarRatingField from '../others/starRatingField';
+import ProductField from '../others/productField';
 
 const PostBulkActionButtons = props => (
   <>
@@ -20,16 +21,21 @@ const ListFilter = (props) => (
   </Filter>
 );
 
-export const UserList = (props) => (
-  <List {...props} bulkActionButtons={<PostBulkActionButtons />} filters={<ListFilter />} >
-    <Datagrid expand={<RecordShow />}>
-      <TextField source='id' />
-      <TextField source='username' />
-      <TextField source='name' />
-      <TextField source='email' />
-      <StarRatingField />
-      <TextField source='product' />
-      <EditButton basePath='/users' />
-    </Datagrid>
-  </List>
-);
+export const UserList = (props) => {
+  const { total } = (useGetList('posts', {page: 1, perPage: 1}, {field: 'title', order: 'DESC'}));
+  const products = useGetList('posts', {page: 1, perPage: total}, {field: 'title', order: 'DESC'})
+
+  return (
+    <List {...props} bulkActionButtons={<PostBulkActionButtons />} filters={<ListFilter />} >
+      <Datagrid expand={<RecordShow />}>
+        <TextField source='id' />
+        <TextField source='username' />
+        <TextField source='name' />
+        <TextField source='email' />
+        <StarRatingField />
+        <ProductField productList={products.data} />
+        <EditButton basePath='/users' />
+      </Datagrid>
+    </List>
+  )
+};
