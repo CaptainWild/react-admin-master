@@ -12,7 +12,6 @@ import {
   Divider
 } from '@material-ui/core';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -106,18 +105,6 @@ const ProductCard = props => {
               variant='body2'
             >
               {`Production Date: ${product.created_at}`}
-            </Typography>
-          </Grid>
-          <Grid
-            className={classes.statsItem}
-            item
-          >
-            <AttachMoneyIcon className={classes.statsIcon} />
-            <Typography
-              display='inline'
-              variant='body2'
-            >
-              {product.price}
             </Typography>
           </Grid>
         </Grid>

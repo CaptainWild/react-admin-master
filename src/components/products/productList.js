@@ -2,8 +2,9 @@ import React from 'react';
 import { List } from 'react-admin';
 import { Grid } from '@material-ui/core';
 
-import { mockData } from './common/data';
 import ProductCard from './common/productCard';
+
+import { mockData } from './common/data';
 
 const ProductGrid = ({ ids, data, basePath }) => (
   <div style={{ margin: '1em' }}>

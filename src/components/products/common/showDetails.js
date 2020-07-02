@@ -8,7 +8,6 @@ import {
   TextField
 } from '@material-ui/core';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 
 import { mockData } from './data';
 
@@ -37,8 +36,7 @@ const useStyles = makeStyles({
 
 const ShowDetails = ({record}) => {
   const classes = useStyles();
-  // for test
-  const data = mockData[record.id];
+  const testRecord = mockData[record.id];
 
   return (
     <div className={classes.info}>
@@ -54,19 +52,7 @@ const ShowDetails = ({record}) => {
                 gutterBottom
                 variant='h5'
               >
-                {data.title}
-              </Typography>
-            </Grid>
-            <Grid item xs={3}>
-              <AttachMoneyIcon className={classes.statsIcon} />
-            </Grid>
-            <Grid item xs={9}>
-              <Typography
-                gutterBottom
-                variant='h6'
-                style={{marginLeft: 30}}
-              >
-                {data.price}
+                {testRecord.title}
               </Typography>
             </Grid>
             <Grid item xs={3}>
@@ -76,9 +62,9 @@ const ShowDetails = ({record}) => {
               <Typography
                 gutterBottom
                 variant='h6'
-                style={{marginLeft: 30}}
+                style={{marginLeft: 60}}
               >
-                {data.created_at}
+                {testRecord.created_at}
               </Typography>
             </Grid>
           </Grid>
@@ -96,48 +82,48 @@ const ShowDetails = ({record}) => {
                 </Typography>
                 <br/>
                 <TextField
-                  label="Ingredient"
-                  defaultValue={data.ingredient}
+                  label='Ingredient'
+                  defaultValue={testRecord.ingredient}
                   InputProps={{
                     readOnly: true,
                   }}
-                  variant="outlined"
+                  variant='outlined'
                   style={{margin:10, width: 270}}
                 />
                 <TextField
-                  label="Category of Gene-based skin care"
-                  defaultValue={data.category_skinCare}
+                  label='Category of Gene-based skin care'
+                  defaultValue={testRecord.category_skinCare}
                   InputProps={{
                     readOnly: true,
                   }}
-                  variant="outlined"
+                  variant='outlined'
                   style={{margin:10, width: 270}}
                 />
                 <TextField
-                  label="Category of application"
-                  defaultValue={data.category_application}
+                  label='Category of application'
+                  defaultValue={testRecord.category_application}
                   InputProps={{
                     readOnly: true,
                   }}
-                  variant="outlined"
+                  variant='outlined'
                   style={{margin:10, width: 270}}
                 />
                 <TextField
-                  label="Category of product"
-                  defaultValue={data.category_product}
+                  label='Category of product'
+                  defaultValue={testRecord.category_product}
                   InputProps={{
                     readOnly: true,
                   }}
-                  variant="outlined"
+                  variant='outlined'
                   style={{margin:10, width: 270}}
                 />
                 <TextField
-                  id="outlined-multiline-static"
-                  label="Description"
+                  id='outlined-multiline-static'
+                  label='Description'
                   multiline
                   rows={4}
-                  defaultValue={data.description}
-                  variant="outlined"
+                  defaultValue={testRecord.description}
+                  variant='outlined'
                   style={{margin:10, width: 560}}
                 />
               </CardContent>

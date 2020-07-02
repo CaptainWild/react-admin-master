@@ -9,8 +9,8 @@ import { ProductList, ProductEdit, ProductShow, ProductCreate, ProductIcon } fro
 function App() {
   return (
     <Admin dataProvider={jsonServerProvider('https://jsonplaceholder.typicode.com')}>
-      <Resource name="users" list={UserList} edit={UserEdit} icon={UserIcon} />
-      <Resource name="posts" list={ProductList} edit={ProductEdit} show={ProductShow} create={ProductCreate} icon={ProductIcon} />
+      <Resource name='users' list={UserList} edit={UserEdit} icon={UserIcon} />
+      <Resource name='posts' options={{ label: 'Products' }} list={ProductList} edit={ProductEdit} show={ProductShow} create={ProductCreate} icon={ProductIcon} />
     </Admin>
   );
 }

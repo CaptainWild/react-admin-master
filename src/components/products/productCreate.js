@@ -84,14 +84,14 @@ export const ProductCreate = (props) => {
                 <CardContent>
                   <Typography
                     gutterBottom
-                    variant="h5"
-                    component="h2"
+                    variant='h5'
+                    component='h2'
                     style={{paddingLeft: 50}}
                   >
                     INFORMATION
                   </Typography>
                   <TextInput source='title' className={classes.input} />
-                  <TextInput source='price' className={classes.input} />
+                  <TextInput label='Product Link' source='link' className={classes.input} />
                   <DateInput label='Production Date' source='created_at' className={classes.input} />
                 </CardContent>
               </Card>
@@ -101,8 +101,8 @@ export const ProductCreate = (props) => {
         <FormTab label='TECHNICAL INFORMATION'>
           <Typography
             gutterBottom
-            variant="h5"
-            component="h2"
+            variant='h5'
+            component='h2'
             style={{paddingLeft: 100, paddingTop: 50, paddingBottom: 30}}
           >
             SELECT CATEGORY
