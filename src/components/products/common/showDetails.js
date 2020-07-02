@@ -8,7 +8,8 @@ import {
   TextField
 } from '@material-ui/core';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+
+import { mockData } from './data';
 
 const useStyles = makeStyles({
   root: {
@@ -35,6 +36,7 @@ const useStyles = makeStyles({
 
 const ShowDetails = ({record}) => {
   const classes = useStyles();
+  const testRecord = mockData[record.id];
 
   return (
     <div className={classes.info}>
@@ -50,7 +52,7 @@ const ShowDetails = ({record}) => {
                 gutterBottom
                 variant='h5'
               >
-                {record.title}
+                {testRecord.title}
               </Typography>
             </Grid>
             <Grid item xs={3}>
@@ -60,9 +62,9 @@ const ShowDetails = ({record}) => {
               <Typography
                 gutterBottom
                 variant='h6'
-                style={{marginLeft: 30}}
+                style={{marginLeft: 60}}
               >
-                {record.created_at}
+                {testRecord.created_at}
               </Typography>
             </Grid>
           </Grid>
@@ -80,48 +82,48 @@ const ShowDetails = ({record}) => {
                 </Typography>
                 <br/>
                 <TextField
-                  label="Ingredient"
-                  defaultValue={record.ingredient}
+                  label='Ingredient'
+                  defaultValue={testRecord.ingredient}
                   InputProps={{
                     readOnly: true,
                   }}
-                  variant="outlined"
+                  variant='outlined'
                   style={{margin:10, width: 270}}
                 />
                 <TextField
-                  label="Category of Gene-based skin care"
-                  defaultValue={record.category_skinCare}
+                  label='Category of Gene-based skin care'
+                  defaultValue={testRecord.category_skinCare}
                   InputProps={{
                     readOnly: true,
                   }}
-                  variant="outlined"
+                  variant='outlined'
                   style={{margin:10, width: 270}}
                 />
                 <TextField
-                  label="Category of application"
-                  defaultValue={record.category_application}
+                  label='Category of application'
+                  defaultValue={testRecord.category_application}
                   InputProps={{
                     readOnly: true,
                   }}
-                  variant="outlined"
+                  variant='outlined'
                   style={{margin:10, width: 270}}
                 />
                 <TextField
-                  label="Category of product"
-                  defaultValue={record.category_product}
+                  label='Category of product'
+                  defaultValue={testRecord.category_product}
                   InputProps={{
                     readOnly: true,
                   }}
-                  variant="outlined"
+                  variant='outlined'
                   style={{margin:10, width: 270}}
                 />
                 <TextField
-                  id="outlined-multiline-static"
-                  label="Description"
+                  id='outlined-multiline-static'
+                  label='Description'
                   multiline
                   rows={4}
-                  defaultValue={record.description}
-                  variant="outlined"
+                  defaultValue={testRecord.description}
+                  variant='outlined'
                   style={{margin:10, width: 560}}
                 />
               </CardContent>

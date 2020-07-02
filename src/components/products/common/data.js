@@ -4,7 +4,7 @@ export const mockData = {
   1: {
     id: 1,
     title: 'Product 1',
-    price: '190',
+    link: 'https://',
     created_at: '2020/4/6',
     description: 'Huawei is a leading global provider of information and communications technology (ICT) infrastructure and smart devices.',
     ingredient: 'peptide',
@@ -15,7 +15,7 @@ export const mockData = {
   2: {
     id: 2,
     title: 'Product 2',
-    price: '190',
+    link: 'https://',
     created_at: '2020/4/6',
     description: 'iPod touch now comes with the A10 Fusion chip, which powers augmented reality games and apps.',
     ingredient: 'peptide',
@@ -26,7 +26,7 @@ export const mockData = {
   3: {
     id: 3,
     title: 'Product 3',
-    price: '190',
+    link: 'https://',
     created_at: '2020/4/6',
     description: 'Vodafone Group plc /ˈvoʊdəfoʊn/ is a British multinational telecommunications company.',
     ingredient: 'peptide',
@@ -37,7 +37,7 @@ export const mockData = {
   4: {
     id: 4,
     title: 'Product 4',
-    price: '190',
+    link: 'https://',
     created_at: '2020/4/6',
     description: 'Microsoft Corporation is an American multinational technology company with headquarters in Redmond, Washington.',
     ingredient: 'peptide',
@@ -48,7 +48,7 @@ export const mockData = {
   5: {
     id: 5,
     title: 'Product 5',
-    price: '190',
+    link: 'https://',
     created_at: '2020/4/6',
     description: 'Sony at InfoComm 2020. InfoComm is going online for 2020 with a virtual audiovisual and interactive experience.',
     ingredient: 'peptide',
@@ -59,7 +59,7 @@ export const mockData = {
   6: {
     id: 6,
     title: 'Product 6',
-    price: '190',
+    link: 'https://',
     created_at: '2020/4/6',
     description: 'Nokia is an innovative global leader in 5G, networks and phones. See how we create the technology to connect the world.',
     ingredient: 'peptide',
@@ -70,7 +70,7 @@ export const mockData = {
   7: {
     id: 7,
     title: 'Product 7',
-    price: '190',
+    link: 'https://',
     created_at: '2020/4/6',
     description: 'BlackBerry provides enterprises and governments with the software and services they need to secure the Internet of Things.',
     ingredient: 'peptide',
@@ -81,7 +81,7 @@ export const mockData = {
   8: {
     id: 8,
     title: 'Product 8',
-    price: '190',
+    link: 'https://',
     created_at: '2020/4/6',
     description: 'Samsung helps you discover a wide range of home electronics with cutting-edge technology including smartphones, tablets, TVs, home appliances and more.',
     ingredient: 'peptide',
@@ -92,7 +92,7 @@ export const mockData = {
   9: {
     id: 9,
     title: 'Product 9',
-    price: '190',
+    link: 'https://',
     created_at: '2020/4/6',
     description: 'Toshiba Corporation is a Japanese multinational conglomerate headquartered in Minato, Tokyo.',
     ingredient: 'peptide',
@@ -103,7 +103,7 @@ export const mockData = {
   10: {
     id: 10,
     title: 'Product 10',
-    price: '190',
+    link: 'https://',
     created_at: '2020/4/6',
     description: 'Hitachi delivers digital solutions utilizing Lumada in five sectors including Mobility, Smart Life, Industry, Energy and IT, to increase our customer.',
     ingredient: 'peptide',

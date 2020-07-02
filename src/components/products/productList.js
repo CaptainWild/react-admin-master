@@ -4,6 +4,8 @@ import { Grid } from '@material-ui/core';
 
 import ProductCard from './common/productCard';
 
+import { mockData } from './common/data';
+
 const ProductGrid = ({ ids, data, basePath }) => (
   <div style={{ margin: '1em' }}>
     <Grid
@@ -18,7 +20,7 @@ const ProductGrid = ({ ids, data, basePath }) => (
           md={6}
           xs={12}
         >
-          <ProductCard product={data[id]} />
+          <ProductCard product={mockData[id]} />
         </Grid>
       ))}
     </Grid>

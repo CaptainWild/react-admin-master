@@ -4,6 +4,8 @@ import RichTextInput from 'ra-input-rich-text';
 import { Grid, Card, CardContent, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
 
+import { mockData } from './common/data';
+
 const editStyles = makeStyles({
   root: {
       opacity: 0.87,
@@ -42,7 +44,7 @@ const editStyles = makeStyles({
 });
 
 const EditProductTitle = ({ record }) => {
-  return <span>{record ? `"${record.title}"` : ''}</span>;
+  return <span>{record ? `"${mockData[record.id].title}"` : ''}</span>;
 };
 
 const ingredientChoices = [
@@ -88,8 +90,8 @@ export const ProductEdit = (props) => {
                 <CardContent>
                   <Typography
                     gutterBottom
-                    variant="h5"
-                    component="h2"
+                    variant='h5'
+                    component='h2'
                     style={{paddingLeft: 50}}
                   >
                     INFORMATION
@@ -105,8 +107,8 @@ export const ProductEdit = (props) => {
         <FormTab label='TECHNICAL INFORMATION'>
           <Typography
             gutterBottom
-            variant="h5"
-            component="h2"
+            variant='h5'
+            component='h2'
             style={{paddingLeft: 100, paddingTop: 50, paddingBottom: 30}}
           >
             SELECT CATEGORY

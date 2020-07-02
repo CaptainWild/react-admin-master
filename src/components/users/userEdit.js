@@ -58,7 +58,7 @@ export const UserEdit = (props) => {
             <Grid item  xs={12} sm style={{padding: 40}}>
               <Card>
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
+                  <Typography gutterBottom variant='h5' component='h2'>
                     Personal Info
                   </Typography>
                   <TextInput source='username' className={classes.input} />
@@ -74,7 +74,7 @@ export const UserEdit = (props) => {
             <Grid item xs={12} sm style={{padding: '35px'}}>
               <Card>
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
+                  <Typography gutterBottom variant='h5' component='h2'>
                     Email and Address
                   </Typography>
                   <TextInput source='email' type='email' className={classes.input} />
@@ -86,10 +86,10 @@ export const UserEdit = (props) => {
             <Grid item  xs={12} sm style={{padding: '35px'}}>
               <Card>
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
+                  <Typography gutterBottom variant='h5' component='h2'>
                     Other Info
                   </Typography>
-                  <ReferenceArrayInput label='Products' source='product' reference='products' perPage={total} className={classes.input}>
+                  <ReferenceArrayInput label='Products' source='product' reference='posts' perPage={total} className={classes.input}>
                     <SelectArrayInput optionText='title' />
                   </ReferenceArrayInput>
                   <TextInput source='nickname' className={classes.input} />

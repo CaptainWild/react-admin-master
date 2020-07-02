@@ -84,8 +84,8 @@ export const ProductCreate = (props) => {
                 <CardContent>
                   <Typography
                     gutterBottom
-                    variant="h5"
-                    component="h2"
+                    variant='h5'
+                    component='h2'
                     style={{paddingLeft: 50}}
                   >
                     INFORMATION
@@ -101,8 +101,8 @@ export const ProductCreate = (props) => {
         <FormTab label='TECHNICAL INFORMATION'>
           <Typography
             gutterBottom
-            variant="h5"
-            component="h2"
+            variant='h5'
+            component='h2'
             style={{paddingLeft: 100, paddingTop: 50, paddingBottom: 30}}
           >
             SELECT CATEGORY
