@@ -1,5 +1,5 @@
 import React from 'react';
-import { Create, TabbedForm, FormTab, TextInput, DateInput, SelectInput } from 'react-admin';
+import { Create, TabbedForm, FormTab, TextInput, DateInput, SelectInput, required } from 'react-admin';
 import RichTextInput from 'ra-input-rich-text';
 import { Grid, Card, CardContent, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
@@ -90,9 +90,9 @@ export const ProductCreate = (props) => {
                   >
                     INFORMATION
                   </Typography>
-                  <TextInput source='title' className={classes.input} />
-                  <TextInput label='Product Link' source='link' className={classes.input} />
-                  <DateInput label='Production Date' source='created_at' className={classes.input} />
+                  <TextInput source='title' validate={[required()]} className={classes.input} />
+                  <TextInput label='Product Link' source='link' validate={[required()]} className={classes.input} />
+                  <DateInput label='Production Date' source='created_at' initialValue={new Date()} className={classes.input} />
                 </CardContent>
               </Card>
             </Grid>

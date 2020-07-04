@@ -1,5 +1,5 @@
 import React from 'react';
-import { Edit, TabbedForm, FormTab, TextInput, DateInput, SelectInput } from 'react-admin';
+import { Edit, TabbedForm, FormTab, TextInput, DateInput, SelectInput, required } from 'react-admin';
 import RichTextInput from 'ra-input-rich-text';
 import { Grid, Card, CardContent, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
@@ -96,8 +96,8 @@ export const ProductEdit = (props) => {
                   >
                     INFORMATION
                   </Typography>
-                  <TextInput source='title' className={classes.input} />
-                  <TextInput label='Product Link' source='link' className={classes.input} />
+                  <TextInput source='title' validate={[required()]} className={classes.input} />
+                  <TextInput label='Product Link' validate={[required()]} source='link' className={classes.input} />
                   <DateInput label='Production Date' source='created_at' className={classes.input} />
                 </CardContent>
               </Card>
