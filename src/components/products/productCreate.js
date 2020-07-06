@@ -1,5 +1,6 @@
+/* eslint-disable no-useless-escape */
 import React from 'react';
-import { Create, TabbedForm, FormTab, TextInput, DateInput, SelectInput } from 'react-admin';
+import { Create, TabbedForm, FormTab, TextInput, DateInput, SelectInput, required, regex } from 'react-admin';
 import RichTextInput from 'ra-input-rich-text';
 import { Grid, Card, CardContent, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
@@ -68,6 +69,8 @@ const productChoices = [
   { id: 'serum', name: 'Serum' },
 ];
 
+const validateURL = [required(), regex(/[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/, 'Must be a URL')];
+
 export const ProductCreate = (props) => {
   const classes = editStyles();
 
@@ -90,9 +93,9 @@ export const ProductCreate = (props) => {
                   >
                     INFORMATION
                   </Typography>
-                  <TextInput source='title' className={classes.input} />
-                  <TextInput label='Product Link' source='link' className={classes.input} />
-                  <DateInput label='Production Date' source='created_at' className={classes.input} />
+                  <TextInput source='title' validate={[required()]} className={classes.input} />
+                  <TextInput label='Product Link' source='link' validate={validateURL} className={classes.input} />
+                  <DateInput label='Production Date' source='created_at' initialValue={new Date()} className={classes.input} />
                 </CardContent>
               </Card>
             </Grid>

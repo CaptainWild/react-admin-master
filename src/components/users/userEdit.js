@@ -1,9 +1,10 @@
 import React  from 'react';
-import { Edit, TabbedForm, FormTab, TextInput, ReferenceArrayInput, SelectArrayInput, useGetList } from 'react-admin';
+import { Edit, TabbedForm, FormTab, TextInput, ReferenceArrayInput, useGetList } from 'react-admin';
 import { Grid, Avatar, Typography, Card, CardContent } from '@material-ui/core';
 import RichTextInput from 'ra-input-rich-text';
 import { makeStyles } from '@material-ui/core';
 import StarRatingInput from '../others/starRatingInput';
+import { StyledSelectArrayInput } from '../others/styledSelectArrayInput';
 
 const editStyles = makeStyles({
   root: {
@@ -36,8 +37,6 @@ const editStyles = makeStyles({
     width: '300px',
   },
 });
-
-
 
 const EditUserTitle = ({ record }) => {
   return <span>User {record ? `"${record.name}"` : ''}</span>;
@@ -90,10 +89,9 @@ export const UserEdit = (props) => {
                     Other Info
                   </Typography>
                   <ReferenceArrayInput label='Products' source='product' reference='posts' perPage={total} className={classes.input}>
-                    <SelectArrayInput optionText='title' />
+                    <StyledSelectArrayInput optionText='title' />
                   </ReferenceArrayInput>
                   <TextInput source='nickname' className={classes.input} />
-                  <TextInput source='slug' className={classes.input} />
                   <StarRatingInput
                     source='rating'
                     className={classes.input}
