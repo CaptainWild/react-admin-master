@@ -92,7 +92,6 @@ export const UserEdit = (props) => {
                     <StyledSelectArrayInput optionText='title' />
                   </ReferenceArrayInput>
                   <TextInput source='nickname' className={classes.input} />
-                  <TextInput source='slug' className={classes.input} />
                   <StarRatingInput
                     source='rating'
                     className={classes.input}
