@@ -2,24 +2,22 @@ import  WP from 'wpapi'
 
 export default {
     login: ({ username, password }) => {
-        
         const wp = new WP({
             endpoint: 'https://geneiumcom.wpcomstaging.com/wp-json',
             username,
             password,
         });
         return wp.users().me().then(result => {
-            localStorage.setItem('role', 'admin');
             localStorage.removeItem('not_authenticated');
+            localStorage.setItem('auth_header', btoa(`${username}:${password}`));
             return result;
         }).catch(err => {
             console.log('Login error:', err);
-            throw new Error('User authentication error!')
+            throw new Error(err.message);
         });
     },
     logout: () => {
         localStorage.setItem('not_authenticated', true);
-        localStorage.removeItem('role');
         return Promise.resolve();
     },
     checkError: ({ status }) => {
