@@ -1,22 +1,21 @@
+import  WP from 'wpapi'
+
 export default {
     login: ({ username, password }) => {
-        if (username === 'login' && password === 'password') {
-            localStorage.removeItem('not_authenticated');
-            localStorage.removeItem('role');
-            return Promise.resolve();
-        }
-        if (username === 'user' && password === 'password') {
-            localStorage.setItem('role', 'user');
-            localStorage.removeItem('not_authenticated');
-            return Promise.resolve();
-        }
-        if (username === 'admin' && password === 'password') {
+        
+        const wp = new WP({
+            endpoint: 'https://geneiumcom.wpcomstaging.com/wp-json',
+            username,
+            password,
+        });
+        return wp.users().me().then(result => {
             localStorage.setItem('role', 'admin');
             localStorage.removeItem('not_authenticated');
-            return Promise.resolve();
-        }
-        localStorage.setItem('not_authenticated', true);
-        return Promise.reject();
+            return result;
+        }).catch(err => {
+            console.log('Login error:', err);
+            throw new Error('User authentication error!')
+        });
     },
     logout: () => {
         localStorage.setItem('not_authenticated', true);
