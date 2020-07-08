@@ -23,10 +23,9 @@ export default {
       method: 'GET',
       headers: new Headers({ authorization: `Basic ${authHeader}`}),
     }).then(({ headers, json }) => {
-
       return {
         data: json,
-        total: parseInt(10),
+        total: Number(headers.get('x-wp-total')),
       }
     });
   },
