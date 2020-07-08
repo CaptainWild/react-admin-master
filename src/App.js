@@ -13,7 +13,7 @@ function App() {
     // <Admin dataProvider={jsonServerProvider('https://jsonplaceholder.typicode.com')} authProvider={authProvider}>
     <Admin dataProvider={dataProvider} authProvider={authProvider}>
       <Resource name='users' list={UserList} edit={UserEdit} icon={UserIcon} />
-      <Resource name='posts' options={{ label: 'Products' }} list={ProductList} edit={ProductEdit} show={ProductShow} create={ProductCreate} icon={ProductIcon} />
+      <Resource name='products' list={ProductList} edit={ProductEdit} show={ProductShow} create={ProductCreate} icon={ProductIcon} />
     </Admin>
   );
 }

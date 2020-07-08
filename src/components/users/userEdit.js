@@ -88,7 +88,7 @@ export const UserEdit = (props) => {
                   <Typography gutterBottom variant='h5' component='h2'>
                     Other Info
                   </Typography>
-                  <ReferenceArrayInput label='Products' source='product' reference='posts' perPage={total} className={classes.input}>
+                  <ReferenceArrayInput label='Products' source='product' reference='products' perPage={total} className={classes.input}>
                     <StyledSelectArrayInput optionText='title' />
                   </ReferenceArrayInput>
                   <TextInput source='nickname' className={classes.input} />

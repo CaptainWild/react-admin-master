@@ -23,7 +23,7 @@ const ListFilter = (props) => (
 
 export const UserList = (props) => {
   const { total } = (useGetList('posts', {page: 1, perPage: 1}, {field: 'title', order: 'DESC'}));
-  const products = useGetList('posts', {page: 1, perPage: total}, {field: 'title', order: 'DESC'})
+  const products = useGetList('posts', {page: 1, perPage: total}, {field: 'title', order: 'DESC'});
 
   return (
     <List {...props} bulkActionButtons={<PostBulkActionButtons />} filters={<ListFilter />} >
