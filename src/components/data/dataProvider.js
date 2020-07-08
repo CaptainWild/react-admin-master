@@ -89,12 +89,8 @@ export default {
 
   updateMany: (resource, params) => {
     const authHeader = localStorage.getItem('auth_header');
-    const query = {
-      filter: JSON.stringify({ id: params.ids}),
-    };
-    return httpClient(`${apiUrl}/${resource}?${stringify(query)}`, {
-      method: 'PUT',
-      body: JSON.stringify(params.data),
+    return httpClient(`${apiUrl}/${resource}`, {
+      method: 'GET',
       headers: new Headers({ authorization: `Basic ${authHeader}`}),
     }).then(({ json }) => ({ data: json }));
   },

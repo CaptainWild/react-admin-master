@@ -1,5 +1,5 @@
 import React  from 'react';
-import { Filter, List, Datagrid, TextField, EditButton, TextInput, SearchInput, BulkDeleteButton, useGetList } from 'react-admin';
+import { Filter, List, Datagrid, TextField, EditButton, TextInput, SearchInput, useGetList } from 'react-admin';
 
 import ResetViewsButton from '../others/resetViewButton';
 import RecordShow from './common/recordShow';
@@ -9,8 +9,6 @@ import ProductField from '../others/productField';
 const PostBulkActionButtons = props => (
   <>
     <ResetViewsButton component='users' {...props} />
-    {/* default bulk delete action */}
-    <BulkDeleteButton {...props} />
   </>
 );
 
