@@ -1,5 +1,5 @@
 import React  from 'react';
-import { Filter, List, Datagrid, TextField, EditButton, TextInput, SearchInput, BulkDeleteButton, useGetList } from 'react-admin';
+import { Filter, List, Datagrid, TextField, EditButton, TextInput, SearchInput, useGetList } from 'react-admin';
 
 import ResetViewsButton from '../others/resetViewButton';
 import RecordShow from './common/recordShow';
@@ -9,8 +9,6 @@ import ProductField from '../others/productField';
 const PostBulkActionButtons = props => (
   <>
     <ResetViewsButton component='users' {...props} />
-    {/* default bulk delete action */}
-    <BulkDeleteButton {...props} />
   </>
 );
 
@@ -22,8 +20,8 @@ const ListFilter = (props) => (
 );
 
 export const UserList = (props) => {
-  const { total } = (useGetList('posts', {page: 1, perPage: 1}, {field: 'title', order: 'DESC'}));
-  const products = useGetList('posts', {page: 1, perPage: total}, {field: 'title', order: 'DESC'})
+  const { total } = useGetList('posts', {page: 1, perPage: 1}, {field: 'title', order: 'DESC'});
+  const products = useGetList('posts', {page: 1, perPage: total}, {field: 'title', order: 'DESC'});
 
   return (
     <List {...props} bulkActionButtons={<PostBulkActionButtons />} filters={<ListFilter />} >

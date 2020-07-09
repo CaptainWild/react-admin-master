@@ -1,5 +1,5 @@
 import React  from 'react';
-import { Edit, TabbedForm, FormTab, TextInput, ReferenceArrayInput, useGetList } from 'react-admin';
+import { Edit, TabbedForm, FormTab, TextInput, ReferenceArrayInput, useGetList, Toolbar, SaveButton } from 'react-admin';
 import { Grid, Avatar, Typography, Card, CardContent } from '@material-ui/core';
 import RichTextInput from 'ra-input-rich-text';
 import { makeStyles } from '@material-ui/core';
@@ -36,7 +36,17 @@ const editStyles = makeStyles({
     marginLeft: 30,
     width: '300px',
   },
+  toolbar: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
 });
+
+const CustomToolbar = props => (
+  <Toolbar {...props} >
+      <SaveButton />
+  </Toolbar>
+);
 
 const EditUserTitle = ({ record }) => {
   return <span>User {record ? `"${record.name}"` : ''}</span>;
@@ -48,7 +58,7 @@ export const UserEdit = (props) => {
 
   return (
     <Edit title={<EditUserTitle />} {...props}>
-      <TabbedForm>
+      <TabbedForm toolbar={<CustomToolbar className={classes.toolbar} />}>
         <FormTab label='PERSONAL INFO'>
           <Grid container className={classes.personalInfo}>
             <Grid item >
@@ -88,7 +98,7 @@ export const UserEdit = (props) => {
                   <Typography gutterBottom variant='h5' component='h2'>
                     Other Info
                   </Typography>
-                  <ReferenceArrayInput label='Products' source='product' reference='posts' perPage={total} className={classes.input}>
+                  <ReferenceArrayInput label='Products' source='product' reference='products' perPage={total} className={classes.input}>
                     <StyledSelectArrayInput optionText='title' />
                   </ReferenceArrayInput>
                   <TextInput source='nickname' className={classes.input} />
