@@ -24,11 +24,20 @@ export default {
             }
             return role;
           })
+          if (localStorage.getItem('not_authenticated')) {
+            throw new Error('noAdmin');
+          }
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          console.log(error)
+          throw new Error('noAdmin')
+        });
       }).catch(err => {
-          console.log('Login error:', err);
-          throw new Error(err.message);
+        console.log(err);
+        if (err.message === 'noAdmin') {
+          return Promise.reject('Please login with admin credentials...');
+        }
+        return Promise.reject('Login Failed, Please input correct Username/Password...');
       });
     },
     logout: () => {
