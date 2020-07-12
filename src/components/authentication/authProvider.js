@@ -35,9 +35,9 @@ export default {
       }).catch(err => {
         console.log(err);
         if (err.message === 'noAdmin') {
-          return Promise.reject('Please login with admin credentials...');
+          return Promise.reject('Please login with admin credentials.');
         }
-        return Promise.reject('Login Failed, Please input correct Username/Password...');
+        return Promise.reject('Login Failed, Please input correct Username/Password.');
       });
     },
     logout: () => {

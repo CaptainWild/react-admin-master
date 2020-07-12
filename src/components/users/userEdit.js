@@ -1,6 +1,6 @@
 import React  from 'react';
 import { Edit, TabbedForm, FormTab, TextInput, DateInput, ReferenceArrayInput, useGetList, Toolbar, SaveButton } from 'react-admin';
-import { Grid, Avatar, Typography, Card, CardContent } from '@material-ui/core';
+import { Grid, Typography, Card, CardContent } from '@material-ui/core';
 import RichTextInput from 'ra-input-rich-text';
 import { makeStyles } from '@material-ui/core';
 import AvatarField from './common/avatarField';
