@@ -1,8 +1,9 @@
 import React  from 'react';
-import { Edit, TabbedForm, FormTab, TextInput, ReferenceArrayInput, useGetList, Toolbar, SaveButton } from 'react-admin';
+import { Edit, TabbedForm, FormTab, TextInput, DateInput, ReferenceArrayInput, useGetList, Toolbar, SaveButton } from 'react-admin';
 import { Grid, Avatar, Typography, Card, CardContent } from '@material-ui/core';
 import RichTextInput from 'ra-input-rich-text';
 import { makeStyles } from '@material-ui/core';
+import AvatarField from './common/avatarField';
 import StarRatingInput from '../others/starRatingInput';
 import { StyledSelectArrayInput } from '../others/styledSelectArrayInput';
 
@@ -62,7 +63,7 @@ export const UserEdit = (props) => {
         <FormTab label='PERSONAL INFO'>
           <Grid container className={classes.personalInfo}>
             <Grid item >
-              <Avatar src='./images/avatar_sample.png' className={classes.avatar} />
+              <AvatarField source='avatar_urls' />
             </Grid>
             <Grid item  xs={12} sm style={{padding: 40}}>
               <Card>
@@ -88,7 +89,7 @@ export const UserEdit = (props) => {
                   </Typography>
                   <TextInput source='email' type='email' className={classes.input} />
                   <TextInput label='Location' source='locale' className={classes.input} />
-                  <TextInput source='url' className={classes.input} />
+                  <DateInput source='registered_date' className={classes.input} />
                 </CardContent>
               </Card>
             </Grid>
