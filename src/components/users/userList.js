@@ -1,8 +1,8 @@
 import React  from 'react';
 import { Filter, List, Datagrid, TextField, EditButton, TextInput, SearchInput, useGetList } from 'react-admin';
 
+import NameField from './common/nameField';
 import ResetViewsButton from '../others/resetViewButton';
-import RecordShow from './common/recordShow';
 import StarRatingField from '../others/starRatingField';
 import ProductField from '../others/productField';
 
@@ -25,11 +25,10 @@ export const UserList = (props) => {
 
   return (
     <List {...props} bulkActionButtons={<PostBulkActionButtons />} filters={<ListFilter />} >
-      <Datagrid expand={<RecordShow />}>
+      <Datagrid>
         <TextField source='id' />
-        <TextField source='username' />
-        <TextField source='name' />
-        <TextField source='email' />
+        <NameField />
+        <TextField source='link' />
         <StarRatingField />
         <ProductField productList={products.data} />
         <EditButton basePath='/users' />
